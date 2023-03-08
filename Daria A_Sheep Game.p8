@@ -294,9 +294,11 @@ function collect_apples()
 	for apple in all(apples) do
 		if (apple.distance < 4)
 		then
+			printh("Apple collected")
 			del(apples, apple)
 		end
 		apple.distance = distance(player.x, player.y, apple.x, apple.y)
+		printh(tostr(apple.distance).." - Apple distance to player")
 	end
 end
 __gfx__
