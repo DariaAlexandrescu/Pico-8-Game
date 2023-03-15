@@ -245,13 +245,13 @@ function move_sheep(sheep)
 			then
 				sheep.walking=false
 			end
-			if sheep.x > sheep.next_position.x
+			if sheep.x != nil and sheep.next_position.x != nil and sheep.x > sheep.next_position.x
 			then
 				sheep.x-=sheep.acc
 			else 
 				sheep.x+=sheep.acc
 			end
-			if sheep.y > sheep.next_position.y
+			if sheep.y != nil and sheep.next_position.y != nil and sheep.y > sheep.next_position.y
 			then
 				sheep.y-=sheep.acc
 			else
@@ -443,6 +443,7 @@ function update_menu()
  if btnp(❎) then
  	scene="game"
  	game_time_current=0
+ 	score=0
  	game_time_end=time()+10
  	start_game()
  end
